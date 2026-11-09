@@ -1,0 +1,14 @@
+# Sobe a API e o site. O banco NÃO entra aqui: ele fica no alwaysdata.
+services:
+  api:
+    build: ./backend
+    ports: ["8080:8080"]
+    env_file: .env
+  web:
+    build:
+      context: ./frontend
+      args:
+        # o NAVEGADOR chama a API, por isso é localhost (e não "api")
+        VITE_API_URL: http://localhost:8080
+    ports: ["3000:80"]
+    depends_on: [api]

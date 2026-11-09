@@ -1,0 +1,25 @@
+@api = http://localhost:8080
+
+GET {{api}}/api/produtos
+
+###
+
+GET {{api}}/api/produtos/1
+
+###
+
+POST {{api}}/api/produtos
+Content-Type: application/json
+
+{ "nome": "Mochila", "preco": 89.90 }
+
+###
+
+PUT {{api}}/api/produtos/1
+Content-Type: application/json
+
+{ "nome": "Caderno 200 folhas", "preco": 24.90 }
+
+###
+
+DELETE {{api}}/api/produtos/1
