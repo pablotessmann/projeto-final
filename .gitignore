@@ -1,0 +1,6 @@
+# Senha do banco: nunca vai para o GitHub
+.env
+
+# Node / Vue
+node_modules/
+dist/

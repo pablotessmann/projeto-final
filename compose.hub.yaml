@@ -1,0 +1,12 @@
+# Usa as imagens prontas publicadas no Docker Hub (sem compilar nada).
+# Troque "seuusuario" pelo usuário da equipe no Docker Hub.
+# Uso: docker compose -f compose.hub.yaml up
+services:
+  api:
+    image: seuusuario/projeto-final-api:1.0
+    ports: ["8080:8080"]
+    env_file: .env
+  web:
+    image: seuusuario/projeto-final-web:1.0
+    ports: ["3000:80"]
+    depends_on: [api]
